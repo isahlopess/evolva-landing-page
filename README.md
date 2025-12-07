@@ -2,8 +2,6 @@
 
 Este projeto é uma Landing Page moderna e interativa construída para demonstrar proficiência no ecossistema de desenvolvimento web Full-Stack. Ele simula a página inicial de um software SaaS (Software as a Service) com ênfase em Gestão e Crescimento.
 
-## 🔗 Demonstração e Repositório
-
 ---
 
 ## ✨ Funcionalidades Principais
