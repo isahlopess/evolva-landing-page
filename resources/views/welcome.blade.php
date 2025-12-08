@@ -30,7 +30,41 @@
             <div id="theme-app" class="flex"></div>
             <a href="#features" class="text-gray-600 hover:text-indigo-700 font-medium dark:text-gray-300 dark:hover:text-indigo-400">Recursos</a>
             <a href="#precos" class="text-gray-600 hover:text-indigo-700 font-medium dark:text-gray-300 dark:hover:text-indigo-400">Preços</a>
-            <a href="{{ route('login') }}" class="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">Entrar</a>
+
+            @auth
+                <div x-data="{ open: false }" class="relative">
+
+                    <button
+                        @click="open = !open"
+                        class="p-2 border border-transparent rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a1.5 1.5 0 011.488-1.394h14.022a1.5 1.5 0 011.488 1.394" />
+                        </svg>
+                    </button>
+
+                    <div
+                        x-show="open"
+                        @click.outside="open = false"
+                        class="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-700 ring-1 ring-black ring-opacity-5 z-10"
+                        style="display: none;"
+                    >
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit"
+                                    class="w-full text-left flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l3 3m0 0l-3 3m3-3H4.5" />
+                                </svg>
+                                Deslogar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @else
+                <a href="{{ route('login') }}" class="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">Entrar</a>
+            @endauth
         </div>
     </nav>
 </header>
@@ -50,7 +84,7 @@
         </div>
     </section>
 
-    <section id="precos" class="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8" data-aos="zoom-in" data-aos-duration="600">
+    <section id="precos" class="bg-gray-100 max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 dark:bg-gray-800" data-aos="zoom-in" data-aos-duration="600">
         <h2 class="text-4xl font-extrabold text-gray-900 text-center mb-16 dark:text-white">Escolha o Plano Perfeito</h2>
         <div id="pricing-app"></div>
     </section>
