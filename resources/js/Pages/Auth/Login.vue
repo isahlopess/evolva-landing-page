@@ -103,7 +103,7 @@ const submit = () => {
             <p class="text-sm text-center font-normal text-gray-600 dark:text-gray-400 mt-4">
                 Não tem conta?
                 <Link :href="route('register')" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
-                    Registe-se
+                    Registre-se
                 </Link>
             </p>
 

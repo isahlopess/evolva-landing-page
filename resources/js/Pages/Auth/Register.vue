@@ -108,7 +108,7 @@ const submit = () => {
                     :href="route('login')"
                     class="rounded-md text-sm text-indigo-600 dark:text-indigo-400 underline hover:text-indigo-800 dark:hover:text-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
                 >
-                    Já está registado?
+                    Já está registrado?
                 </Link>
 
                 <button
