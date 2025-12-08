@@ -1,59 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📊 Evolva: Landing Page SaaS Interativa (Full-Stack)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este projeto é uma Landing Page moderna e interativa construída para demonstrar proficiência no ecossistema de desenvolvimento web Full-Stack. Ele simula a página inicial de um software SaaS (Software as a Service) com ênfase em Gestão e Crescimento.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Funcionalidades Principais
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+O projeto **Evolva** destaca o desenvolvimento de componentes reativos e a integração limpa entre frontend e backend.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* **Comunicação Vue/Laravel:** Formulário de subscrição no rodapé que envia dados (e-mail) para um *endpoint* Laravel para validação em tempo real (AJAX via Axios).
+* **Interatividade Frontend (Vue.js):** Seção de preços dinâmica que alterna entre planos "Mensal" e "Anual" (com cálculo de desconto) usando a Composition API.
+* **Design Sofisticado (Tailwind CSS):** Estilização moderna e responsiva.
+* **UX/Acessibilidade:**
+    * **Modo Escuro (Dark Mode):** Alternância de tema gerenciada pelo Vue.js com persistência via `localStorage`.
+    * **Animações:** Efeitos de rolagem suave (Smooth Scroll) e animações de entrada (AOS) para as seções, elevando a experiência do utilizador.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🛠️ Tecnologias Utilizadas
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Categoria | Tecnologia |
+| :--- | :--- |
+| **Backend/Framework** | Laravel 11+ |
+| **Frontend/Reatividade** | Vue.js 3 (Composition API) |
+| **Estilização** | Tailwind CSS (Com Dark Mode baseado em classes) |
+| **Compilação de Assets** | Vite |
+| **Interatividade** | Axios (AJAX), AOS (Animate On Scroll) |
+| **Banco de Dados** | SQLite/MySQL (Usado para simular validação de unicidade na tabela `users`) |
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ⚙️ Como Rodar o Projeto Localmente
 
-### Premium Partners
+Siga estas instruções para configurar e executar o projeto **Evolva** na sua máquina local.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 1. Pré-requisitos
 
-## Contributing
+Você precisará ter instalado:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* PHP (v8.2 ou superior)
+* Composer
+* Node.js e NPM
+* Um servidor web (Laragon, XAMPP, Valet ou Docker/Sail)
 
-## Code of Conduct
+### 2. Instalação e Configuração
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+# Clone o repositório
+git clone https://github.com/isahlopess/evolva-landing-page evolva-saas-lp
+cd evolva-saas-lp
 
-## Security Vulnerabilities
+# Instale as dependências do Composer (Backend)
+composer install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Crie e configure o ambiente
+cp .env.example .env
 
-## License
+# Gere a chave de aplicação
+php artisan key:generate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Instale as dependências do Node (Frontend e Tailwind)
+npm install
+
+# Instale o Laravel Breeze e compile os assets
+php artisan breeze:install vue
+# Nota: O código já está configurado, mas este passo garante que o scaffolding Breeze base exista.
+```
+### 3. Execução
+
+Abra dois terminais na pasta raiz do projeto:
+
+1.  **Terminal 1 (Vite - Compilação e Hot Reload):**
+    ```bash
+    npm run dev
+    ```
+
+2.  **Terminal 2 (Laravel - Servidor):**
+    ```bash
+    php artisan serve
+    ```
+
+O projeto estará acessível em `http://127.0.0.1:8000`.
+
+---
+
+### 📝 Documentação e Contribuição
+
+Este projeto foi criado como parte de um portfólio. Para referências sobre o framework, consulte a documentação oficial.
+
+* [Documentação Oficial do Laravel](https://laravel.com/docs)
+* [Documentação Oficial do Vue.js](https://vuejs.org/guide/introduction.html)
+* [Documentação Oficial do Tailwind CSS](https://tailwindcss.com/docs)
