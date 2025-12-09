@@ -1,6 +1,18 @@
 # 📊 Evolva: Landing Page SaaS Interativa (Full-Stack)
 
-Este projeto é uma Landing Page moderna e interativa construída para demonstrar proficiência no ecossistema de desenvolvimento web Full-Stack. Ele simula a página inicial de um software SaaS (Software as a Service) com ênfase em Gestão e Crescimento.
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vue.js-3-42B883?style=for-the-badge&logo=vuedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TailwindCSS-3-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vite-Bundler-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Axios-HTTP%20Client-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+</p>
+
+<p align="center">
+  <strong>Landing Page moderna, interativa e totalmente responsiva construída com Laravel + Vue.js.</strong><br/>
+  Simula uma página inicial de SaaS focada em gestão, crescimento e UX avançada.
+</p>
+
 
 ---
 
@@ -60,11 +72,7 @@ cp .env.example .env
 php artisan key:generate
 
 # Instale as dependências do Node (Frontend e Tailwind)
-npm install
-
-# Instale o Laravel Breeze e compile os assets
-php artisan breeze:install vue
-# Nota: O código já está configurado, mas este passo garante que o scaffolding Breeze base exista.
+npm install 
 ```
 ### 3. Execução
 
